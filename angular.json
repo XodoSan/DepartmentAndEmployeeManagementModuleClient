@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/department-and-employee-management-module-client",
+            "outputPath": "C:/Users/Андрей/source/repos/DepartmentAndEmployeeManagementModule/DepartmentAndEmployeeManagementModule/wwwroot",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
