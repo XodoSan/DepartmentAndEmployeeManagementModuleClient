@@ -1,3 +1,27 @@
+<h1>Все сотрудники</h1>
 <div *ngFor="let employee of employees">
-    <span>{{employee.fio}}</span>
+    <li style="margin-left: 10px;" (click)="action(employee.id, employee.fio)">{{ employee.fio }}</li>
 </div>
+
+<div class="updateContainer">
+  <input style="width: 250px;" placeholder="Сменить ФИО выбранного сотрудника" type="text" [(ngModel)]="newFio">
+  <button style="margin-left: 10px;" (click)="updateEmployee()">Обновить</button>
+</div>
+
+<h1 style="margin-top: 10px;">Иерархия подразделений</h1>
+<ul>
+    <ng-container
+      *ngTemplateOutlet="Recursion; context:{ list: departments }"
+    ></ng-container>
+</ul>
+
+<ng-template #Recursion let-list="list">
+    <li *ngFor="let item of list">
+      <a>{{ item.name }} {{ item.employeesCount }} человек</a>
+      <ul *ngIf="item.childDepartments.length > 0">
+        <ng-container
+          *ngTemplateOutlet="Recursion; context:{ list: item.childDepartments }"
+        ></ng-container>
+      </ul>
+    </li>
+</ng-template>
