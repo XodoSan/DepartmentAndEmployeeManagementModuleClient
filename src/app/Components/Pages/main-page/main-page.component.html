@@ -5,7 +5,12 @@
 
 <div class="updateContainer">
   <input style="width: 250px;" placeholder="Сменить ФИО выбранного сотрудника" type="text" [(ngModel)]="newFio">
-  <button style="margin-left: 10px;" (click)="updateEmployee()">Обновить</button>
+  <button 
+    matTooltip="ФИО должно состоять из 3-х слов и не иметь спец-символов"
+    matTooltipPosition="right"
+    style="margin-left: 10px;" 
+    (click)="updateEmployee()">Обновить
+  </button>
 </div>
 
 <h1 style="margin-top: 10px;">Иерархия подразделений</h1>

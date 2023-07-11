@@ -15,16 +15,19 @@ export class DepartmentAndEmployeeManagementModuleService {
         this._http = http;
     }
 
+    //Получение всех сотрудников
     public getAllEmployees() {
         return this._http.get<Employee[]>
             (environment.constantHost + 'DepartmentAndEmployee/GetAllEmployees');
     }
 
+    //Получение всех отделов
     public getAllDepartments() {
         return this._http.get<Department[]>
             (environment.constantHost + 'DepartmentAndEmployee/GetDepartmentsHierarchy');
     }
 
+    //Обновление ФИО сотрудника
     public updateEmployeeFio(employeeId: Guid, newFio: string) {
         const httpOptions = {
             headers: new HttpHeaders({'Content-Type': 'application/json'})

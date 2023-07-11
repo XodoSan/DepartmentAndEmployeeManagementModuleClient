@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './Components/Pages/main-page/main-page.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { MainPageComponent } from './Components/Pages/main-page/main-page.compon
     BrowserAnimationsModule,
     HttpClientModule,
     MatInputModule,
+    MatButtonModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
